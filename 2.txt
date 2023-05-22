@@ -1,0 +1,21 @@
+import pandas as pd #Python library used for working with data sets
+import numpy as np #Python library used for working with arrays
+df=pd.read_csv('dataset_Facebook.csv',sep=';') #Read a comma-separated values (csv) file into DataFrame
+df
+
+df1=df[['Page total likes','Category','Post Month','Post Weekday']].loc[0:15]
+df1 #allows the return of specified rows and/or columns from that DataFrame
+
+df2=df[['Page total likes','Category','Post Month','Post Weekday']].loc[16:30]
+df2 #allows the return of specified rows and/or columns from that DataFrame
+
+df3=df[['Page total likes','Category','Post Month','Post Weekday']].loc[31:50]
+df3 #allows the return of specified rows and/or columns from that DataFrame
+
+sorted=df.sort_values('Page total likes',ascending=False)
+sorted #sorts the DataFrame by the specified label
+
+pivot_table=pd.pivot_table(df,index=['Type','Paid'],values='like') #Used for aggregation and grouping to find analysis
+pivot_table
+
+pivot_table.shape
